@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Our Group</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        
+        nav {
+            background: #243b55;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f0b429;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        
+        .home {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #243b55, #42678e);
+            color: white;
+        }
+
+        .home h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .home p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .home button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #f0b429;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .home button:hover {
+            background: #d99b12;
+        }
+
+    
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #243b55;
+            margin-bottom: 20px;
+        }
+
+    
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.9;
+            color: #666;
+            font-size: 16px;
+        }
+
+        
+        .members {
+            background: #eaf0f6;
+        }
+
+        .member-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: white;
+            width: 230px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 18px;
+            border: 4px solid #243b55;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .card h3 {
+            color: #243b55;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        
+        .mission p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.9;
+            color: #666;
+        }
+
+        
+        .contact {
+            background: #eaf0f6;
+        }
+
+        .contact p {
+            line-height: 2;
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #243b55;
+                padding: 20px;
+                text-align: center;
+                gap: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .home h1 {
+                font-size: 32px;
+            }
+
+            .home p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+    <nav>
+
+        <div class="logo">OUR GROUP</div>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <ul id="navLinks">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+            <li><a href="#members" onclick="closeMenu()">Members</a></li>
+            <li><a href="#mission" onclick="closeMenu()">Our Mission</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    
+    <div class="home" id="home">
+
+        <div>
+            <h1>Welcome to Our Group</h1>
+
+            <p>
+                Working together, learning together, and growing together.<br>
+                Get to know us and what makes our team unique.
+            </p>
+
+            <button onclick="location.href='#about'">
+                Get to Know Us
+            </button>
+        </div>
+
+    </div>
+
+
+    
+    <section class="about" id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            We are a group of students who share the same goal of learning,
+            improving, and achieving success together. Each member brings
+            different ideas, skills, and experiences that make our teamwork
+            more meaningful. Through cooperation, communication, and
+            dedication, we work together to complete our tasks, face
+            challenges, and achieve our goals.
+        </p>
+
+    </section>
+
+
+    <!-- MEMBERS SECTION -->
+    <section class="members" id="members">
+
+        <h2>Meet Our Members</h2>
+
+        <p>Get to know the people behind our group.</p>
+
+        <div class="member-container">
+
+            <!-- MEMBER 1 -->
+            <div class="card">
+
+                <div class="avatar">
+                    <img src="marwen.jpg" alt="Member 1">
+                </div>
+
+                <h3>Artillaga, Marwen Gabriel M.</h3>
+                
+
+            </div>
+
+
+            <!-- MEMBER 2 -->
+            <div class="card">
+
+                <div class="avatar">
+                    <img src="member2.jpg" alt="Member 2">
+                </div>
+
+                <h3>De Jesus, Kyle Justice</h3>
+                
+
+            </div>
+
+
+
+    </section>
+
+
+    
+    <section class="mission" id="mission">
+
+        <h2>Our Mission</h2>
+
+        <p>
+            Our mission is to work as one team, share our knowledge,
+            develop our skills, and create meaningful outputs.
+            We believe that through teamwork, respect, and determination,
+            we can achieve our goals and learn from every experience.
+        </p>
+
+    </section>
+
+
+    
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Have questions or want to know more about our group?</p>
+
+        <p>Email: marwengabriel83@gmail.com</p>
+
+        <p>Location: Philippines</p>
+
+    </section>
+
+
+    
+    <footer>
+
+        <p>&copy; 2026 Our Group. All Rights Reserved.</p>
+
+    </footer>
+
+
+    
+    <script>
+
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("navLinks").classList.remove("active");
+        }
+
+    </script>
+
+</body>
+</html>
