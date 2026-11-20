@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Our Group</title>
+    <title>About Me | Personal Website</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background: #f5f7fa;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
             color: #333;
         }
 
-        
+
         nav {
-            background: #243b55;
+            background: #172554;
             padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        .logo {
+        nav h2 {
             color: white;
-            font-size: 22px;
-            font-weight: bold;
         }
 
         nav ul {
@@ -46,31 +44,26 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
+            font-weight: bold;
         }
 
         nav ul li a:hover {
-            color: #f0b429;
+            color: #93c5fd;
         }
 
-        .menu-btn {
-            display: none;
-            color: white;
-            font-size: 26px;
-            cursor: pointer;
-        }
 
-        
         .home {
-            min-height: 85vh;
+            min-height: 80vh;
+            background: linear-gradient(
+                rgba(23, 37, 84, 0.85),
+                rgba(23, 37, 84, 0.85)
+            );
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #243b55, #42678e);
             color: white;
+            padding: 30px;
         }
 
         .home h1 {
@@ -80,309 +73,260 @@
 
         .home p {
             font-size: 18px;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        .home button {
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: #f0b429;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: bold;
-        }
 
-        .home button:hover {
-            background: #d99b12;
-        }
-
-    
         section {
-            padding: 80px 10%;
+            padding: 70px 8%;
             text-align: center;
         }
 
         section h2 {
             font-size: 30px;
-            color: #243b55;
+            color: #172554;
             margin-bottom: 20px;
         }
 
-    
-        .about p {
+        section p {
             max-width: 800px;
             margin: auto;
-            line-height: 1.9;
-            color: #666;
-            font-size: 16px;
+            line-height: 1.8;
         }
 
-        
-        .members {
-            background: #eaf0f6;
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .member-container {
+        .profile-image img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #172554;
+        }
+
+        .about-text {
+            max-width: 550px;
+            text-align: left;
+        }
+
+
+        .skills {
+            background: #e8eef8;
+        }
+
+        .skills-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 35px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .card {
+        .skill-card {
             background: white;
-            width: 230px;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            padding: 25px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .card:hover {
-            transform: translateY(-7px);
+        .skill-card h3 {
+            color: #172554;
         }
 
-        
-        .avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 18px;
-            border: 4px solid #243b55;
+
+        .hobbies-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+        .hobby-card {
+            background: white;
+            padding: 25px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .card h3 {
-            color: #243b55;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            color: #777;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        
-        .mission p {
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.9;
-            color: #666;
-        }
-
-        
         .contact {
-            background: #eaf0f6;
+            background: #e8eef8;
         }
 
-        .contact p {
-            line-height: 2;
-            color: #555;
-        }
 
-        /* FOOTER */
         footer {
-            background: #243b55;
+            background: #172554;
             color: white;
             text-align: center;
-            padding: 22px;
-            font-size: 14px;
+            padding: 20px;
         }
 
-        
+    
         @media (max-width: 768px) {
-
-            .menu-btn {
-                display: block;
+            nav {
+                flex-direction: column;
+                gap: 15px;
             }
 
             nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #243b55;
-                padding: 20px;
-                text-align: center;
-                gap: 20px;
-            }
-
-            nav ul.active {
-                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
 
             .home h1 {
                 font-size: 32px;
             }
 
-            .home p {
-                font-size: 15px;
-            }
-
-            section {
-                padding: 60px 7%;
+            .about-text {
+                text-align: center;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-    
+    <!-- Navigation -->
     <nav>
+        <h2>My Website</h2>
 
-        <div class="logo">OUR GROUP</div>
-
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-        <ul id="navLinks">
-            <li><a href="#home" onclick="closeMenu()">Home</a></li>
-            <li><a href="#about" onclick="closeMenu()">About Us</a></li>
-            <li><a href="#members" onclick="closeMenu()">Members</a></li>
-            <li><a href="#mission" onclick="closeMenu()">Our Mission</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-
     </nav>
 
-
-    
+    <!-- Home -->
     <div class="home" id="home">
-
         <div>
-            <h1>Welcome to Our Group</h1>
-
-            <p>
-                Working together, learning together, and growing together.<br>
-                Get to know us and what makes our team unique.
-            </p>
-
-            <button onclick="location.href='#about'">
-                Get to Know Us
-            </button>
+            <h1>Hello, I'm Marwen Gabriel M. Artillaga!</h1>
+            <p>Welcome to my personal website.</p>
+            <p>Get to know more about me, my interests, and my goals.</p>
         </div>
-
     </div>
 
+    <!-- About Me -->
+    <section id="about">
+        <h2>About Me</h2>
 
-    
-    <section class="about" id="about">
+        <div class="about-container">
 
-        <h2>About Us</h2>
-
-        <p>
-            We are a group of students who share the same goal of learning,
-            improving, and achieving success together. Each member brings
-            different ideas, skills, and experiences that make our teamwork
-            more meaningful. Through cooperation, communication, and
-            dedication, we work together to complete our tasks, face
-            challenges, and achieve our goals.
-        </p>
-
-    </section>
-
-
-    <!-- MEMBERS SECTION -->
-    <section class="members" id="members">
-
-        <h2>Meet Our Members</h2>
-
-        <p>Get to know the people behind our group.</p>
-
-        <div class="member-container">
-
-            <!-- MEMBER 1 -->
-            <div class="card">
-
-                <div class="avatar">
-                    <img src="marwen.jpg" alt="Member 1">
-                </div>
-
-                <h3>Artillaga, Marwen Gabriel M.</h3>
-                
-
+            <div class="profile-image">
+                <img src="marwen.jpg" alt="My Profile Picture">
             </div>
 
+            <div class="about-text">
+                <h3>Hello! I'm [Your Name]</h3>
+                <br>
 
-            <!-- MEMBER 2 -->
-            <div class="card">
+                <p>
+                    I am a student who is passionate about learning new things
+                    and improving my knowledge and skills. I enjoy exploring
+                    technology, discovering new ideas, and challenging myself
+                    to become a better version of myself.
+                </p>
+                <br>
 
-                <div class="avatar">
-                    <img src="member2.jpg" alt="Member 2">
-                </div>
-
-                <h3>De Jesus, Kyle Justice</h3>
-                
-
+                <p>
+                    My goal is to continue learning, gain more experiences,
+                    and achieve success in my chosen career.
+                </p>
             </div>
 
-
-
+        </div>
     </section>
-
 
     
-    <section class="mission" id="mission">
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <p>Here are some of the skills I am developing and improving.</p>
 
-        <h2>Our Mission</h2>
+        <div class="skills-container">
 
-        <p>
-            Our mission is to work as one team, share our knowledge,
-            develop our skills, and create meaningful outputs.
-            We believe that through teamwork, respect, and determination,
-            we can achieve our goals and learn from every experience.
-        </p>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Learning programming and coding.</p>
+            </div>
 
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Creating websites using HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Teamwork</h3>
+                <p>Working and communicating with others.</p>
+            </div>
+
+        </div>
     </section>
 
+    
+    <section id="hobbies">
+        <h2>My Hobbies</h2>
+        <p>These are some activities I enjoy during my free time.</p>
+
+        <div class="hobbies-container">
+
+            <div class="hobby-card">
+                <h3>Gaming</h3>
+                <p>Playing games and enjoying challenges.</p>
+            </div>
+
+            <div class="hobby-card">
+                <h3>Technology</h3>
+                <p>Exploring computers and new technologies.</p>
+            </div>
+
+            <div class="hobby-card">
+                <h3>Learning</h3>
+                <p>Discovering new knowledge and skills.</p>
+            </div>
+
+        </div>
+    </section>
 
     
     <section class="contact" id="contact">
-
-        <h2>Contact Us</h2>
-
-        <p>Have questions or want to know more about our group?</p>
-
-        <p>Email: marwengabriel83@gmail.com</p>
-
-        <p>Location: Philippines</p>
-
+        <h2>Contact Me</h2>
+        <p>Email: yourname@email.com</p>
+        <p>Thank you for visiting my personal website!</p>
     </section>
 
-
-    
     <footer>
-
-        <p>&copy; 2026 Our Group. All Rights Reserved.</p>
-
+        <p>&copy; 2026 My Personal Website. All Rights Reserved.</p>
     </footer>
 
-
-    
     <script>
 
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                const target = document.querySelector(
+                    this.getAttribute('href')
+                );
 
-        function closeMenu() {
-            document.getElementById("navLinks").classList.remove("active");
-        }
+                if (target) {
+                    event.preventDefault();
 
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 
 </body>
